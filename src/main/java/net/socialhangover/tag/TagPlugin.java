@@ -42,8 +42,6 @@ public class TagPlugin extends JavaPlugin {
     }
 
     public boolean canTag() {
-        getLogger().info(System.currentTimeMillis() - configuration.TAGGED_TIME.get() + "");
-        getLogger().info(configuration.TAG_COOLDOWN.getValue() + "");
         return System.currentTimeMillis() - configuration.TAGGED_TIME.get() > configuration.TAG_COOLDOWN.getValue();
     }
 
