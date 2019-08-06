@@ -1,0 +1,8 @@
+name: Tag
+version: 1
+description: Tag minigame
+author: 2277
+website: https://github.com/2277/tag
+
+main: net.socialhangover.tag.TagPlugin
+api-version: 1.14
