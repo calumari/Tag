@@ -15,6 +15,12 @@
     <build>
         <defaultGoal>clean package install</defaultGoal>
         <finalName>Tag-${version}</finalName>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources/</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
