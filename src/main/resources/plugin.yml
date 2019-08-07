@@ -1,8 +1,8 @@
-name: Tag
-version: 1
-description: Tag minigame
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
 author: 2277
-website: https://github.com/2277/tag
+website: ${project.url}
 
 main: net.socialhangover.tag.TagPlugin
 api-version: 1.14
