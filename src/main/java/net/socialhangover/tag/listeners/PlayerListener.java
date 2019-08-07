@@ -31,7 +31,7 @@ public class PlayerListener implements Listener {
     public void onEntityDamageByEntityEvent(EntityDamageByEntityEvent event) {
         if (event.getDamager() instanceof Player && event.getEntity() instanceof Player) {
             Player damager = (Player) event.getDamager();
-            if (!plugin.isTagged(damager) || !plugin.canTag()) { return; }
+            if (!plugin.isTagged(damager) || !plugin.canTag(damager)) { return; }
             plugin.tag((Player) event.getEntity());
             plugin.removeTag(damager);
             event.setDamage(0);

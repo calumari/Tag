@@ -40,6 +40,21 @@ public class Configuration {
         }
     };
 
+    public final ConfigKey<UUID> TAGGED_LAST = new ConfigKey<UUID>() {
+        @Override
+        public UUID get() {
+            String value = config.getString("tagged.last");
+            return value == null ? null : UUID.fromString(value);
+        }
+
+        @Override
+        public void set(UUID value) {
+            ConfigurationSection section = config.getConfigurationSection("tagged");
+            if (section == null) section = config.createSection("tagged");
+            section.set("last", value.toString());
+        }
+    };
+
     public final ConfigKey<Long> TAGGED_TIME = new ConfigKey<Long>() {
 
         @Override

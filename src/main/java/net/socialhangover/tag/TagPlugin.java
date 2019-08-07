@@ -41,8 +41,10 @@ public class TagPlugin extends JavaPlugin {
         return configuration.TAGGED_PLAYER.get().equals(player.getUniqueId());
     }
 
-    public boolean canTag() {
-        return System.currentTimeMillis() - configuration.TAGGED_TIME.get() > configuration.TAG_COOLDOWN.getValue();
+    public boolean canTag(Player player) {
+        return System.currentTimeMillis() - configuration.TAGGED_TIME.get() > configuration.TAG_COOLDOWN.getValue() && !player
+                .getUniqueId()
+                .equals(configuration.TAGGED_LAST.get());
     }
 
     public void tag(Player player) {
