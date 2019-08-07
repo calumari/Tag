@@ -6,23 +6,27 @@
 
     <groupId>net.socialhangover</groupId>
     <artifactId>Tag</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
+
+    <name>Tag</name>
+    <description>Tag minigame inspired by HermitCraft.</description>
+    <url>https://github.com/2277/tag</url>
+
     <build>
+        <defaultGoal>clean package install</defaultGoal>
+        <finalName>Tag-${version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
-                    <source>7</source>
-                    <target>7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-    <name>Tag</name>
-    <description>Tag minigame</description>
-    <url>https://github.com/2277/tag</url>
 
     <repositories>
         <repository>
