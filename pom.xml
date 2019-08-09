@@ -6,7 +6,7 @@
 
     <groupId>net.socialhangover</groupId>
     <artifactId>Tag</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <name>Tag</name>
     <description>Tag minigame inspired by HermitCraft.</description>

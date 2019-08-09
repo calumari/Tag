@@ -48,6 +48,7 @@ public class TagPlugin extends JavaPlugin {
     }
 
     public void tag(Player player) {
+        configuration.TAGGED_LAST.set(configuration.TAGGED_PLAYER.get());
         configuration.TAGGED_PLAYER.set(player.getUniqueId());
         configuration.TAGGED_TIME.set(System.currentTimeMillis());
         configuration.save();
