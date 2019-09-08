@@ -1,7 +1,9 @@
 package net.socialhangover.tag.config;
 
-public abstract class ConfigKey<T> {
-    public abstract T get();
+import org.bukkit.configuration.file.YamlConfiguration;
 
-    public abstract void set(T value);
+public interface ConfigKey<T> {
+    int ordinal();
+
+    T get(YamlConfiguration config);
 }

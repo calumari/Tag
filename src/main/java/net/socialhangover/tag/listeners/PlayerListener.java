@@ -16,7 +16,7 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent event) {
-        if (plugin.getConfiguration().TAGGED_PLAYER.get() == null) {
+        if (plugin.getData().getTagged() == null) {
             plugin.tag(event.getPlayer());
             PlayerJoinEvent.getHandlerList().unregister(this);
         }
@@ -30,12 +30,10 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onEntityDamageByEntityEvent(EntityDamageByEntityEvent event) {
         if (event.getDamager() instanceof Player && event.getEntity() instanceof Player) {
-            Player damager = (Player) event.getDamager();
-            Player damagee = (Player) event.getEntity();
-            if (!plugin.isTagged(damager) || !plugin.canTag(damagee)) { return; }
-            plugin.tag(damagee);
-            plugin.removeTag(damager);
-            event.setDamage(0);
+            Player from = (Player) event.getDamager();
+            Player to = (Player) event.getEntity();
+            if (!plugin.isTagged(from) || !plugin.canTag(to)) { return; }
+            plugin.tag(from, to);
         }
     }
 
